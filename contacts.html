@@ -1,10 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <title>Title</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Магазин спортивних товарів</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/contacts.css">
+
+  <meta name="description" content="">
+
+  <meta property="og:title" content="">
+  <meta property="og:type" content="">
+  <meta property="og:url" content="">
+  <meta property="og:image" content="">
+  <meta property="og:image:alt" content="">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icon.png">
+
+  <link rel="manifest" href="site.webmanifest">
+  <meta name="theme-color" content="#fafafa">
 </head>
 <body>
-
+<header>
+  <nav>
+    <script src="js/burgermenu.js" defer></script>
+    <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <ul class="nav-list">
+      <li><a href="index.html">Головна</a></li>
+      <li><a href="catalog.html">Каталог</a></li>
+      <li><a href="about.html">Про нас</a></li>
+      <li><a href="contacts.html">Контакти</a></li>
+      <li><a href="cart.html"> Кошик</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section>
+    <h2>Зворотній зв'язок</h2>
+    <form>
+      <label for="user-name">Ім'я</label>
+      <input type="text" id="user-name" name="user_name" required>
+      <label for="user-email">Email</label>
+      <input type="email" id="user-email" name="user_email" required>
+      <label for="message-type">Тип повідомлення</label>
+      <select id="message-type" name="message_type">
+        <option value="question">Питання</option>
+        <option value="feedback">Відгук</option>
+        <option value="other">Інше</option>
+      </select>
+      <label for="user-message">Повідомлення</label>
+      <textarea id="user-message" name="user_message" rows="5" required></textarea>
+      <button type="submit">Надіслати</button>
+    </form>
+  </section>
+</main>
+<footer>
+  <p>Онлайн бібліотека.</p>
+</footer>
 </body>
 </html>
