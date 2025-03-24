@@ -1,0 +1,71 @@
+{
+  "sports": [
+    {
+      "id": 1,
+      "name": "Футбол"
+    },
+    {
+      "id": 2,
+      "name": "Баскетбол"
+    },
+    {
+      "id": 3,
+      "name": "Бокс"
+    },
+    { "id": 4,
+      "name": "Плавання"
+    },
+    {
+      "id": 5,
+      "name": "Теніс"
+    },
+    {
+      "id": 6,
+      "name": "Біг"
+    }
+  ],
+
+"products":[
+  {
+    "id": 101,
+    "name": "Футбольний м'яч",
+    "brand": "Adidas",
+    "sport_id": [
+      1
+    ],
+    "price": 1500,
+    "image": "img/futbolnyi-miach.webp"
+  },
+  {
+    "id": 102,
+    "name": "Кросівки Nike",
+    "brand": "Nike",
+    "sport_id": [
+      1,
+      2,
+      5,
+      6
+    ],
+    "price": 3200,
+    "image": "img/krosu_nike.webp"
+  },
+  {
+    "id": 103,
+    "name": "Боксерські рукавиці Everlast",
+    "brand": "Everlast",
+    "sport_id": [
+      3
+    ],
+    "price": 1800,
+    "image": "img/boxing_gloves.webp"
+  },
+  {"id": 104,
+    "name": "Плавальні окуляри Speedo",
+    "brand": "Speedo",
+    "sport_id": [
+      4
+    ],
+    "price": 2300,
+    "image": "img/swimming_goggles.webp"}
+]
+}
