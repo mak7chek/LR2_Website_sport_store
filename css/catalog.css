@@ -55,6 +55,40 @@
 .product-card .btn:hover {
   background-color: #aa34a6;
 }
+.search{
+  margin-top: 20px;
+}
+.sidebar {
+  left: 0;          /* Закріплюємо зліва */
+  top: 0;
+  width: 250px;     /* Ширина панелі */
+  height: 100vh;    /* Висота на весь екран */
+  background-color: #262626;
+  padding: 20px;
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.sidebar h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #ff6584;
+}
+
+.filter {
+  width: 90%;
+  padding: 10px;
+  font-size: 14px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background-color: #333;
+  color: white;
+  margin-top: 10px;
+}
+
 
 @media (min-width: 768px) {
 

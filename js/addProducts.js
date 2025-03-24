@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", () =>{
   fetch("data.json")
-    .then(response => response.json())//тіпа обєкт створили
+    .then(response => response.json()) //тіпа обєкт створили
     .then(data => {
       console.log(data.products);
       console.log(data);
       displayProducts(data.products);
     })
-    .catch(error => console.log("Помилка з JSON:", error));
+    .catch(error => console.log("Помилка з товарами JSON:", error));
 });
 
 function displayProducts(products){
@@ -24,4 +24,6 @@ function displayProducts(products){
     gallery.appendChild(card);
   });
 }
+
+
 

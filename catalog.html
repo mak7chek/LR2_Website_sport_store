@@ -40,20 +40,23 @@
 </header>
 
 <main>
-  <h1>Каталог товарів</h1>
-  <!--  <select id="sportFilter" class="filter">
-     <option value="all">Усі види спорту</option>
-     <option value="1">Футбол</option>
-     <option value="2">Баскетбол</option>
-     <option value="3">Бокс</option>
-     <option value="4">Плавання</option>
-     <option value="5">Теніс</option>
-     <option value="6">Біг</option>
-   </select>-->
-   <section class="product-gallery">
+  <h1>Каталог товарів
+    <label for="searchInput"></label>
+    <input type="text" id="searchInput" placeholder="Пошук " class="search">
+  </h1>
 
 
-   </section>
+
+  <div class="sidebar" id="sidebar">
+    <h3>Фільтри</h3>
+    <label for="sportFilter"></label>
+    <select id="sportFilter" class="filter">
+      <option value="all">Усі види спорту</option>
+    </select>
+
+  </div>
+
+  <section class="product-gallery"></section>
  </main>
 
  <footer>
