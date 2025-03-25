@@ -1,11 +1,9 @@
-
 .product-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
   padding: 20px;
 }
-
 
 .product-card {
   background-color: #262626;
@@ -55,31 +53,33 @@
 .product-card .btn:hover {
   background-color: #aa34a6;
 }
-.search{
-  margin-top: 20px;
-}
+
 .sidebar {
-  left: 0;          /* Закріплюємо зліва */
+  position: fixed;
+  left: -250px;
   top: 0;
-  width: 250px;     /* Ширина панелі */
-  height: 100vh;    /* Висота на весь екран */
+  width: 200px;
+  height: 100vh;
   background-color: #262626;
   padding: 20px;
-  box-shadow: 2px  10px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 0px 10px rgba(0, 0, 0, 0.3);
   color: white;
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
+.sidebar.open {
+left : 0;
+}
 .sidebar h3 {
   font-size: 18px;
   margin-bottom: 10px;
   color: #ff6584;
 }
 
-.filter {
-  width: 90%;
+.filter,.search {
+  width: 196px;
   padding: 10px;
   font-size: 14px;
   border: 1px solid #555;
@@ -89,12 +89,32 @@
   margin-top: 10px;
 }
 
+.search{
+  width: 175px;
+}
+main{
+  position: relative;
+}
+.sidebar-btn {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-color: #ff6584;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
 
+.sidebar-btn:hover {
+  background-color: #aa34a6;
+}
 @media (min-width: 768px) {
-
   .product-card {
     padding: 12px;
-
   }
 }
 

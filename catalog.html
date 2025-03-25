@@ -24,6 +24,7 @@
 <body>
 
 <script src="js/addProducts.js"></script>
+<script src="js/filter.js"></script>
 
 <header>
   <nav>
@@ -40,15 +41,13 @@
 </header>
 
 <main>
-  <h1>Каталог товарів
-    <label for="searchInput"></label>
-    <input type="text" id="searchInput" placeholder="Пошук " class="search">
-  </h1>
+  <h1>Каталог товарів</h1>
 
-
-
+  <button id="toggleSidebar" class="sidebar-btn">☰ Фільтри</button>
   <div class="sidebar" id="sidebar">
     <h3>Фільтри</h3>
+    <label for="searchInput"></label>
+    <input type="text" id="searchInput" placeholder="Пошук " class="search">
     <label for="sportFilter"></label>
     <select id="sportFilter" class="filter">
       <option value="all">Усі види спорту</option>
