@@ -1,15 +1,5 @@
-document.addEventListener("DOMContentLoaded", () =>{
-  fetch("data.json")
-    .then(response => response.json()) //тіпа обєкт створили
-    .then(data => {
-      console.log(data.products);
-      console.log(data);
-      displayProducts(data.products);
-    })
-    .catch(error => console.log("Помилка з товарами JSON:", error));
-});
 
-function displayProducts(products){
+export function displayProducts(products){
   const gallery = document.querySelector(".product-gallery");
   gallery.innerHTML = "";
   products.forEach(product => {
