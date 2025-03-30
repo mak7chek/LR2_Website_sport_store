@@ -14,6 +14,6 @@ export function displayProducts(products){
     gallery.appendChild(card);
   });
 }
-
+document.querySelector(".product-gallery").innerHTML
 
 

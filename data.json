@@ -34,7 +34,7 @@
       1
     ],
     "price": 1500,
-    "image": "img/futbolnyi-miach.webp"
+    "image": "./public/images/futbolnyi-miach.webp"
   },
   {
     "id": 102,
@@ -47,7 +47,7 @@
       6
     ],
     "price": 3200,
-    "image": "img/krosu_nike.webp"
+    "image": "./public/images/krosu_nike.webp"
   },
   {
     "id": 103,
@@ -57,7 +57,7 @@
       3
     ],
     "price": 1800,
-    "image": "img/boxing_gloves.webp"
+    "image": "./public/images/boxing_gloves.webp"
   },
   {"id": 104,
     "name": "Плавальні окуляри Speedo",
@@ -66,6 +66,6 @@
       4
     ],
     "price": 2300,
-    "image": "img/swimming_goggles.webp"}
+    "image": "./public/images/swimming_goggles.webp"}
 ]
 }

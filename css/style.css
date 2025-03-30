@@ -179,8 +179,23 @@ h1, h2 {
 p {
   color: #a5a5a5;
 }
+.admin {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.admin-link {
+  display: block;
+}
 
-
+.admin-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid  #ff6584;
+  object-fit: cover;
+}
 
 /* Footer (нижня частина сайту) */
 footer {

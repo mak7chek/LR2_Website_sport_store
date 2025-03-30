@@ -32,8 +32,13 @@
       <li><a href="catalog.html">Каталог</a></li>
       <li><a href="about.html">Про нас</a></li>
       <li><a href="contacts.html">Контакти</a></li>
-      <li><a href="cart.html"> Кошик</a></li>
+      <li><a href="cart.html">Кошик</a></li>
     </ul>
+    <div class="admin">
+      <a href="admin.html" class="admin-link">
+        <img src="./img/free-icon-avatar-6676023.png" alt="Avatar" class="admin-avatar">
+      </a>
+    </div>
   </nav>
 </header>
 
@@ -89,5 +94,48 @@
 </footer>
 
 </body>
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-app.js";
+  import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/11.5.0/firebase-firestore.js";
 
+  // 🔥 Підключення до Firebase
+  const firebaseConfig = {
+    apiKey: "AIzaSyCQcDHMHxfL1hxTqhJbrXg83MSwXsyC9a8",
+    authDomain: "web-spotr-stor.firebaseapp.com",
+    projectId: "web-spotr-stor",
+    storageBucket: "web-spotr-stor.firebasestorage.app",
+    messagingSenderId: "649470381363",
+    appId: "1:649470381363:web:119e494776dedb3c438246",
+    measurementId: "G-N8K3LC7H1E"
+  };
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app); // Firestore (база даних)
+
+  // 🔥 Функція для додавання товару в Firestore
+  async function addProduct() {
+    try {
+      await addDoc(collection(db, "products"), {
+        name: "Футбольний м'яч",
+        brand: "Adidas",
+        price: 800,
+        sport_id: 1
+      });
+      console.log("✅ Товар додано успішно!");
+    } catch (error) {
+      console.error("❌ Помилка при додаванні:", error);
+    }
+  }
+
+  // 🔥 Функція для отримання товарів з Firestore
+  async function getProducts() {
+    const querySnapshot = await getDocs(collection(db, "products"));
+    querySnapshot.forEach(doc => {
+      console.log("🛒", doc.id, "=>", doc.data());
+    });
+  }
+
+  // ✅ Викличемо функції для тесту
+  addProduct();
+  getProducts();
+</script>
 </html>

@@ -1,10 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="uk">
 <head>
   <meta charset="UTF-8">
-  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Адмін-панель</title>
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/admin.css">
 </head>
 <body>
+<h1>Адмін-панель</h1>
 
+<form id="productForm">
+  <input type="text" id="name" placeholder="Назва товару" required>
+  <input type="text" id="brand" placeholder="Бренд" required>
+  <input id="price" placeholder="Ціна" required type="number">
+  <select id="sport">
+    <option value="football">Футбол</option>
+    <option value="basketball">Баскетбол</option>
+    <option value="tennis">Теніс</option>
+  </select>
+  <input type="text" id="imageUrl" placeholder="URL зображення" required>
+  <button type="submit">Додати товар</button>
+</form>
+
+<h2>Список товарів</h2>
+<section class="product-gallery" id="adminGallery"></section>
+
+<script type="module" src="js/admin.js"></script>
 </body>
 </html>

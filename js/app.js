@@ -1,14 +1,18 @@
 import { displayProducts }  from "./addProducts.js";
-import { updateSportFilter , filterProducts }  from "./filter.js";
+import {filterProducts, updateSportFilter,serachProducts} from "./filter.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  fetch("data.json")
+  fetch(`http://localhost:3000/products`)
     .then(res => res.json())
-    .then(data => {
-      console.log("JSON завантажено:", data);
-      updateSportFilter(data.sports); // Оновлюємо список видів спорту
-      displayProducts(data.products); // Відображаємо всі товари
-    })
+    .then(products => {
+      console.log("JSON завантажено:", products);
+      displayProducts(products);     })
+    .catch(error => console.log("Помилка з JSON:", error));
+  fetch(`http://localhost:3000/sports`)
+    .then(res => res.json())
+    .then(sport => {
+      console.log("JSON завантажено:", sport);
+      updateSportFilter(sport);     })
     .catch(error => console.log("Помилка з JSON:", error));
 
   const sidebar = document.getElementById("sidebar");
@@ -19,15 +23,23 @@ document.addEventListener("DOMContentLoaded", () => {
     sidebar.classList.toggle("open");
   });
 
-  // Закриття sidebar при кліку поза ним
   document.addEventListener("click", (event) => {
     if (!sidebar.contains(event.target) && !toggleButton.contains(event.target)) {
       sidebar.classList.remove("open");
     }
   });
 
-  // Додаємо обробник для фільтрації товарів
+  //обробник для фільтрації товарів
   document.getElementById("sportFilter").addEventListener("change",(event) =>{
-    displayProducts( filterProducts(event));
+    filterProducts(event).then(filterProducts => {
+      displayProducts(filterProducts);
+    });
   });
+
+  document.getElementById("searchInput").addEventListener("input", (event) => {
+    serachProducts(event).then(searchProducts => {
+      displayProducts(searchProducts);
+    });
+  });
+
 });
