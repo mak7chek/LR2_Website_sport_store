@@ -1,71 +1,153 @@
 {
   "sports": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Футбол"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Баскетбол"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Бокс"
     },
-    { "id": 4,
+    {
+      "id": "4",
       "name": "Плавання"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Теніс"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Біг"
     }
   ],
-
-"products":[
-  {
-    "id": 101,
-    "name": "Футбольний м'яч",
-    "brand": "Adidas",
-    "sport_id": [
-      1
-    ],
-    "price": 1500,
-    "image": "./public/images/futbolnyi-miach.webp"
-  },
-  {
-    "id": 102,
-    "name": "Кросівки Nike",
-    "brand": "Nike",
-    "sport_id": [
-      1,
-      2,
-      5,
-      6
-    ],
-    "price": 3200,
-    "image": "./public/images/krosu_nike.webp"
-  },
-  {
-    "id": 103,
-    "name": "Боксерські рукавиці Everlast",
-    "brand": "Everlast",
-    "sport_id": [
-      3
-    ],
-    "price": 1800,
-    "image": "./public/images/boxing_gloves.webp"
-  },
-  {"id": 104,
-    "name": "Плавальні окуляри Speedo",
-    "brand": "Speedo",
-    "sport_id": [
-      4
-    ],
-    "price": 2300,
-    "image": "./public/images/swimming_goggles.webp"}
-]
+  "products": [
+    {
+      "id": 1743445935986,
+      "name": "Баскетбольне кільце для дітей OneTeam BH03 чорне OT-BH03",
+      "brand": "OneTeam",
+      "sport_id": [
+        "2"
+      ],
+      "price": "3769",
+      "image": "https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/5/9/5904823009927_20-jpg/basketbol-ne-kil-ce-dlja-ditej-oneteam-bh03-chorne-ot-bh03-761411.jpg"
+    },
+    {
+      "id": 1743445974018,
+      "name": "Баскетбольний м'яч Wilson NBA Authentic Series Outdoor WTB7300XB07 Розмір 7",
+      "brand": "Wilson NBA",
+      "sport_id": [
+        "2"
+      ],
+      "price": "2049",
+      "image": "https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/1/9/194979030899_40E-jpg/basketbol-nij-m-jach-wilson-nba-authentic-series-outdoor-wtb7300xb07-rozmir-7-685832.jpg"
+    },
+    {
+      "id": 1743446033082,
+      "name": "Чоловічі кросівки HOKA Bondi 9 Wide для дощу/зливи",
+      "brand": "HOKA",
+      "sport_id": [
+        "1",
+        "2",
+        "5",
+        "6"
+      ],
+      "price": "8799",
+      "image": "https://sportano.ua/img/986c30c27a3d26a3ee16c136f92f4ff5/1/9/197634745176_20-jpg/cholovichi-krosivki-hoka-bondi-9-wide-dlja-doschu-zlivi-1386092.jpg"
+    },
+    {
+      "id": 1743446099419,
+      "name": "Термофутболка Joma Brama Academy LS чорна 101018",
+      "brand": "Joma",
+      "sport_id": [
+        "6"
+      ],
+      "price": "759",
+      "image": "https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/9/9/9997639949057_1-jpg/termofutbolka-joma-brama-academy-ls-chorna-101018-481761.jpg"
+    },
+    {
+      "id": 1743446154058,
+      "name": "Кросівки футбольні чоловічі Mizuno Morelia Neo IV β Japan Mix",
+      "brand": " Mizuno",
+      "sport_id": [
+        "1"
+      ],
+      "price": "12899",
+      "image": "https://sportano.ua/img/986c30c27a3d26a3ee16c136f92f4ff5/5/0/5059882533897_20-jpg/krosivki-futbol-ni-cholovichi-mizuno-morelia-neo-iv-b-japan-mix-1388139.jpg"
+    },
+    {
+      "id": 1743446188893,
+      "name": "Футбольний м'яч Joma Gioco II FIFA PRO 400646.200 Розмір 5 5.0 (1)",
+      "brand": "Joma",
+      "sport_id": [
+        "1"
+      ],
+      "price": "2049",
+      "image": "https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/8/4/8424309612894_21-jpg/futbol-nij-m-jach-joma-gioco-ii-fifa-pro-400646-200-rozmir-5-430918.jpg"
+    },
+    {
+      "id": 1743446239303,
+      "name": "Окуляри для плавання Arena Air-Speed Mirror silver/black",
+      "brand": "Arena",
+      "sport_id": [
+        "4"
+      ],
+      "price": "1299",
+      "image": "https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/3/4/3468336363584_20-jpg/okuljari-dlja-plavannja-arena-air-speed-mirror-silver-black-566593.jpg"
+    },
+    {
+      "id": 1743446283259,
+      "name": "Чоловічі плавки Allover шокуючі рожеві плавки-краватка Allover шокуючі рожеві плавки-краватка",
+      "brand": " Allover",
+      "sport_id": [
+        "4"
+      ],
+      "price": "1499",
+      "image": "https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/3/4/3468337602910_50-jpeg/cholovichi-plavki-allover-shokujuchi-rozhevi-plavki-kravatka-allover-shokujuchi-rozhevi-plavki-kravatka-1355800.jpeg"
+    },
+    {
+      "id": 1743446314219,
+      "name": "Ласти для плавання AQUA-SPEED сині/світло-блакитні",
+      "brand": "AQUA",
+      "sport_id": [
+        "2"
+      ],
+      "price": "1189",
+      "image": "https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/5/9/5908217627292_21-jpg/lasti-dlja-plavannja-aqua-speed-sini-svitlo-blakitni-392495.jpg"
+    },
+    {
+      "id": 1743446366905,
+      "name": "Кольорові боксерські рукавички Fairtex URFACE x Boxing",
+      "brand": " Fairtex",
+      "sport_id": [
+        "3"
+      ],
+      "price": "12789",
+      "image": "https://sportano.ua/img/986c30c27a3d26a3ee16c136f92f4ff5/8/8/8859368981313_40-jpg/kol-orovi-boksers-ki-rukavichki-fairtex-urface-x-boxing-1250083.jpg"
+    },
+    {
+      "id": 1743446413065,
+      "name": "Рукавиці гелеві внутрішні зі стрічкою Everlast 4345 чорні EV4345",
+      "brand": "Everlast",
+      "sport_id": [
+        "3"
+      ],
+      "price": "1399",
+      "image": "https://sportano.ua/img/986c30c27a3d26a3ee16c136f92f4ff5/0/0/009283606077_20-jpg/rukavici-gelevi-vnutrishni-zi-strichkoju-everlast-4345-chorni-ev4345-413589.jpg"
+    },
+    {
+      "id": 1743446478059,
+      "name": "Ракетка для тенісу Wilson Tour Slam Lite",
+      "brand": "Wilson",
+      "sport_id": [
+        "5"
+      ],
+      "price": "1339",
+      "image": "https://sportano.ua/img/b52b588476b8def9e5d485faf958f16f/0/9/097512728980_20-jpg/raketka-dlja-tenisu-wilson-tour-slam-lite-1377293.jpg"
+    }
+  ]
 }

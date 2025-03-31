@@ -13,7 +13,7 @@ export function updateSportFilter(sports) {
 
 // Фільтрація товарів
 export function filterProducts(event) {
-  const sportId = parseInt(event.target.value);
+  const sportId = event.target.value;
 
   return fetch("data.json")
     .then(res => res.json())

@@ -6,19 +6,41 @@
   <title>Адмін-панель</title>
   <link rel="stylesheet" href="./css/style.css">
   <link rel="stylesheet" href="./css/admin.css">
+  <link rel="stylesheet" href="./css/catalog.css">
 </head>
 <body>
+</head>
+<body>
+<header>
+  <nav>
+    <script src="js/burgermenu.js" defer></script>
+    <button class="menu-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <ul class="nav-list">
+      <li><a href="index.html">Головна</a></li>
+      <li><a href="catalog.html">Каталог</a></li>
+      <li><a href="about.html">Про нас</a></li>
+      <li><a href="contacts.html">Контакти</a></li>
+      <li><a href="cart.html">Кошик</a></li>
+    </ul>
+    <div class="admin">
+        <img src="./img/free-icon-avatar-6676023.png" alt="Avatar" class="admin-avatar">
+    </div>
+  </nav>
+</header>
 <h1>Адмін-панель</h1>
-
-<form id="productForm">
+<form class = "admin-form-add" id="productForm">
   <input type="text" id="name" placeholder="Назва товару" required>
   <input type="text" id="brand" placeholder="Бренд" required>
   <input id="price" placeholder="Ціна" required type="number">
-  <select id="sport">
-    <option value="football">Футбол</option>
-    <option value="basketball">Баскетбол</option>
-    <option value="tennis">Теніс</option>
-  </select>
+  <label for="sport">Виберіть види спорту:</label>
+  <div id="sport">
+    <label><input type="checkbox" name="sport" value="1"> Футбол</label>
+    <label><input type="checkbox" name="sport" value="2"> Баскетбол</label>
+    <label><input type="checkbox" name="sport" value="3"> Бокс </label>
+    <label><input type="checkbox" name="sport" value="4"> Плавання </label>
+    <label><input type="checkbox" name="sport" value="5"> Теніс</label>
+    <label><input type="checkbox" name="sport" value="6"> Біг </label>
+  </div>
   <input type="text" id="imageUrl" placeholder="URL зображення" required>
   <button type="submit">Додати товар</button>
 </form>
@@ -26,6 +48,6 @@
 <h2>Список товарів</h2>
 <section class="product-gallery" id="adminGallery"></section>
 
-<script type="module" src="js/admin.js"></script>
+<script src="js/admin.js"></script>
 </body>
 </html>

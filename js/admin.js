@@ -1,49 +1,67 @@
-const productForm = document.getElementById("productForm");
+const productsAddForm = document.getElementById("productForm");
 const adminGallery = document.getElementById("adminGallery");
 
-let products = JSON.parse(localStorage.getItem("products")) || [];
 
-// 📌 Завантаження товарів
 function loadProducts() {
-  displayProducts(products);
+  fetch("http://localhost:3000/products")
+    .then(res => {
+      if (!res.ok) throw new Error("Помилка з серваком");
+      return res.json();
+    })
+    .then(products_localhost => displayProducts(products_localhost))
+    .catch(err => console.log("Помилка з серваком", err));
 }
 
-// 📌 Додавання нового товару
-productForm.addEventListener("submit", (event) => {
-  event.preventDefault();
+productsAddForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const selectSport=Array.from(document.querySelectorAll("#sport input:checked")).map(checkbox => checkbox.value);
 
-  const newProduct = {
+  const newProduct= {
     id: Date.now(),
     name: document.getElementById("name").value,
     brand: document.getElementById("brand").value,
-    price: parseFloat(document.getElementById("price").value),
-    sport_id: document.getElementById("sport").value,
-    image: document.getElementById("imageUrl").value
-  };
+    sport_id: selectSport,
+    price: document.getElementById("price").value,
+    image: document.getElementById("imageUrl").value,
 
-  products.push(newProduct);
-  saveProducts();
-  displayProducts(products);
-  productForm.reset();
+};
+ fetch("http://localhost:3000/products", {
+   method: "POST",
+   headers: {
+     "Content-Type": "application/json",
+   },
+   body: JSON.stringify(newProduct)
+ })
+   .then(res => {
+     if (!res.ok) throw new Error("Помилка при додаванні товару");
+     return res.json();
+   })
+   .then(() => {
+     productsAddForm.reset();
+     loadProducts();
+   })
+   .catch(err => console.log("Помилка при додаванні товару", err));
 });
 
-// 📌 Відображення товарів
-function displayProducts(products) {
+function displayProducts(products){
   adminGallery.innerHTML = "";
   products.forEach(product => {
-    const productCard = document.createElement("div");
-    productCard.classList.add("product-card");
-    productCard.innerHTML = `
-            <img src="${product.image}" alt="${product.name}">
-            <h3>${product.name}</h3>
-            <p>${product.brand}</p>
-            <p>${product.price} грн</p>
-            <button class="edit-btn" data-id="${product.id}">Редагувати</button>
-            <button class="delete-btn" data-id="${product.id}">Видалити</button>
-        `;
-    adminGallery.appendChild(productCard);
-  });
+    const productCards = document.createElement("div");
+    productCards.classList.add("product-card");
 
+    // language=HTML format=false
+    productCards.innerHTML = `
+    <img src="${product.image}">
+    <h3>${product.name}</h3>
+    <p>${product.brand}</p>
+    <p>${product.price} грн </p>
+    <button class = "edit-btn" data-id="${product.id}">Редагувати</button>
+    <button class="delete-btn" data-id="${product.id}">Видалити</button>
+    `;
+
+    adminGallery.appendChild(productCards);
+
+  });
   document.querySelectorAll(".delete-btn").forEach(btn => {
     btn.addEventListener("click", (event) => {
       const id = parseInt(event.target.dataset.id);
@@ -59,31 +77,38 @@ function displayProducts(products) {
   });
 }
 
-// 📌 Видалення товару
+
 function deleteProduct(id) {
-  products = products.filter(product => product.id !== id);
-  saveProducts();
-  displayProducts(products);
+  console.log("Видаляю товар :", id);
+  id = Number(id);
+  fetch(`http://localhost:3000/products/${id}`, {
+    method: "DELETE"
+  })
+    .then( r => {
+    if (!r.ok) {
+      throw new Error("Помилка при видаленні");
+    }
+  })
+    .then(() => loadProducts())
+    .catch(err => console.log("Помилка при видаленні", err));
 }
-
-// 📌 Редагування товару
 function editProduct(id) {
-  const product = products.find(p => p.id === id);
-  if (!product) return;
+  fetch(`http://localhost:3000/products/${id}`)
+    .then(res => {
+      if (!res.ok) throw new Error("Помилка при отриманні товару");
+      return res.json();
+    })
+    .then(product => {
+      document.getElementById("name").value = product.name;
+      document.getElementById("brand").value = product.brand;
+      document.getElementById("price").value = product.price;
+      document.getElementById("imageUrl").value = product.image;
 
-  document.getElementById("name").value = product.name;
-  document.getElementById("brand").value = product.brand;
-  document.getElementById("price").value = product.price;
-  document.getElementById("sport").value = product.sport_id;
-  document.getElementById("imageUrl").value = product.image;
 
-  deleteProduct(id);
+      document.querySelectorAll("#sports input").forEach(input => {
+        input.checked = product.sport_id.includes(input.value);
+      });
+    })
+    .catch(err => console.log("Помилка при отриманні товару", err));
 }
-
-// 📌 Збереження в `localStorage`
-function saveProducts() {
-  localStorage.setItem("products", JSON.stringify(products));
-}
-
-// 🔥 Завантажуємо товари при відкритті сторінки
 loadProducts();
