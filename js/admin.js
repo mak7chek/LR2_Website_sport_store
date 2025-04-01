@@ -17,7 +17,7 @@ productsAddForm.addEventListener("submit", (e) => {
   const selectSport=Array.from(document.querySelectorAll("#sport input:checked")).map(checkbox => checkbox.value);
 
   const newProduct= {
-    id: Date.now(),
+    id: Date.now().toString(),
     name: document.getElementById("name").value,
     brand: document.getElementById("brand").value,
     sport_id: selectSport,
@@ -64,14 +64,14 @@ function displayProducts(products){
   });
   document.querySelectorAll(".delete-btn").forEach(btn => {
     btn.addEventListener("click", (event) => {
-      const id = parseInt(event.target.dataset.id);
+      const id = event.target.dataset.id;
       deleteProduct(id);
     });
   });
 
   document.querySelectorAll(".edit-btn").forEach(btn => {
     btn.addEventListener("click", (event) => {
-      const id = parseInt(event.target.dataset.id);
+      const id = event.target.dataset.id;
       editProduct(id);
     });
   });
@@ -79,16 +79,15 @@ function displayProducts(products){
 
 
 function deleteProduct(id) {
-  console.log("Видаляю товар :", id);
-  id = Number(id);
+  console.log(`Видаляю товар з ID: ${id} (тип: ${typeof id})`);
   fetch(`http://localhost:3000/products/${id}`, {
     method: "DELETE"
   })
-    .then( r => {
-    if (!r.ok) {
-      throw new Error("Помилка при видаленні");
-    }
-  })
+    .then(r => {
+      if (!r.ok) {
+        throw new Error("Помилка при видаленні");
+      }
+    })
     .then(() => loadProducts())
     .catch(err => console.log("Помилка при видаленні", err));
 }
@@ -104,11 +103,12 @@ function editProduct(id) {
       document.getElementById("price").value = product.price;
       document.getElementById("imageUrl").value = product.image;
 
-
-      document.querySelectorAll("#sports input").forEach(input => {
+      document.querySelectorAll("#sport input").forEach(input => {
         input.checked = product.sport_id.includes(input.value);
       });
+      deleteProduct(id)
     })
     .catch(err => console.log("Помилка при отриманні товару", err));
+
 }
 loadProducts();
