@@ -60,7 +60,7 @@
   border-radius: 8px;
   box-shadow: 0 0
 }
-.delete-btn , .edit-btn {
+.delete-btn ,.edit-btn  {
   display: inline-block;
   padding: 10px 15px;
   background-color: #ff6584;
@@ -68,11 +68,14 @@
   text-decoration: none;
   border-radius: 5px;
   transition: background-color 0.3s ease;
-  margin-top: 10px;
   outline: none;
   border: none;
   text-align: center;
   cursor: pointer;
+  margin-top: 5px;
+}
+.edit-btn{
+  margin-top: auto;
 }
 .delete-btn:hover, .edit-btn:hover {
   background-color: #ff4a6e;

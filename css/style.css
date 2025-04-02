@@ -106,7 +106,6 @@ body::after {
   right: 0;
 }
 
-/* Header (верхня частина сайту) */
 header {
   background: #1c1c1c;
   color: #e0e0e0;
@@ -147,7 +146,7 @@ header nav ul li a:hover {
 header nav ul li a:hover::after {
   transform: scaleX(1);
 }
-/* Кнопка для мобільного меню */
+
 .menu-toggle {
   display: none;
   background: none;
@@ -159,7 +158,6 @@ header nav ul li a:hover::after {
   margin-left: auto;
 }
 
-/* Основний контент */
 main {
   margin-top: 20px;
   padding: 20px;

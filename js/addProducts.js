@@ -11,6 +11,7 @@ export function displayProducts(products) {
  <img src="${product.image}" alt = "${product.name}">
 <h3>${product.name}</h3>
 <p> Ціна: ${product.price} грн</p>
+ <a href="product.html?id=${product.id}" class="details-button">Детальніше</a>
 <button class="btn" data-id="${product.id}">Додавти в кошик</button> `;
     gallery.appendChild(card);
   });
